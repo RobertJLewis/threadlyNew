@@ -28,7 +28,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ["your-heroku-app-name.herokuapp.com", "localhost"]
+ALLOWED_HOSTS = ["https://threadly-bd86388a958b.herokuapp.com/", "localhost"]
 
 
 # Application definition
