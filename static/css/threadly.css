@@ -1,0 +1,43 @@
+/* brand red = #d71f29 (adjust if needed) */
+:root {
+  --threadly-red: #d71f29;
+}
+
+.border-danger     { border-color: var(--threadly-red)!important; }
+.bg-danger         { background-color: var(--threadly-red)!important; }
+.text-danger       { color: var(--threadly-red)!important; }
+
+.navbar-brand img { height: 40px; }
+.carousel-caption { background: rgba(0,0,0,.55); border-left: 6px solid var(--threadly-red); }
+.ratio > img.object-fit-cover { object-fit: cover; }
+footer { font-size: .875rem; }
+
+
+.footer-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #ffeaea; /* a lighter tint on hover */
+}
+
+.footer-social {
+  font-size: 1.25rem;
+  color: #fff;
+}
+.footer-social:hover {
+  color: #ffeaea;
+}
+
+/* Lighten the horizontal rule */
+footer hr {
+  opacity: 0.3;
+}
+
+.empty-state {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %}Login – Threadly{% endblock %}
+
+{% block content %}
+<div class="row align-items-center g-5">
+  <div class="col-md-6 text-center">
+    <img src="{% static 'img/world-map.jpeg' %}" class="img-fluid" alt="">
+  </div>
+
+  <div class="col-md-6">
+    <h2 class="mb-4">LOG&nbsp;IN&nbsp;&nbsp;<a href="{% url 'register' %}" class="fs-5 text-decoration-none">REGISTER</a></h2>
+
+    <form method="post" class="vstack gap-3">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      <div>
+        <label class="form-label fw-bold">Username</label>
+        {{ form.username|add_class:"form-control form-control-lg border-dark" }}
+      </div>
+      <div>
+        <label class="form-label fw-bold">Password</label>
+        {{ form.password|add_class:"form-control form-control-lg border-dark" }}
+      </div>
+      <button class="btn btn-danger btn-lg w-100">Log in</button>
+    </form>
+
+    <p class="text-end mt-2 small">
+      <a href="{% url 'register' %}" class="link-secondary">create new account</a>
+    </p>
+  </div>
+</div>
+{% endblock %}

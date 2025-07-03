@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<article>
+  <h1>{{ object.title }}</h1>
+  <p class="meta">By {{ object.author }} on {{ object.created_at|date:"F j, Y" }}</p>
+  {% if object.hero_image %}<img src="{{ object.hero_image.url }}" alt="hero">{% endif %}
+  <div class="body">
+    {{ object.body|safe }}  {#  if body already HTML #}
+    {# or for markdown: {{ object.body|markdown }} with a custom filter #}
+  </div>
+</article>
+<a href="{% url 'post_list' %}">← Back</a>
+{% endblock %}

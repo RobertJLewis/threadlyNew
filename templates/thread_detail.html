@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ thread.title }} – Threadly{% endblock %}
+
+{% block content %}
+  <div class="mb-4">
+    <h1 class="fw-bold">{{ thread.title }}</h1>
+    <div class="small text-muted">
+      <i class="bi bi-person-circle me-1"></i>{{ thread.author.username }}
+      &nbsp;•&nbsp;
+      {{ thread.created_at|date:"F j, Y, g:i a" }}
+      &nbsp;•&nbsp;
+      <a href="{% url 'category_feed' thread.category.slug %}" class="link-secondary">
+        {{ thread.category.name }}
+      </a>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="mb-5">
+    <p>{{ thread.body|linebreaks }}</p>
+  </div>
+
+  <!-- Reactions -->
+  <div class="d-flex align-items-center mb-4">
+    <form action="{% url 'thread_react' thread.pk %}" method="post" class="me-3">
+      {% csrf_token %}
+      <input type="hidden" name="value" value="1">
+      <button type="submit" class="btn btn-outline-success btn-sm">
+        👍 {{ likes_count }}
+      </button>
+    </form>
+    <form action="{% url 'thread_react' thread.pk %}" method="post">
+      {% csrf_token %}
+      <input type="hidden" name="value" value="-1">
+      <button type="submit" class="btn btn-outline-danger btn-sm">
+        👎 {{ dislikes_count }}
+      </button>
+    </form>
+  </div>
+
+  <hr>
+
+  <!-- Comments -->
+  <section class="mb-5">
+    <h4 class="mb-3">Comments ({{ comments_count }})</h4>
+
+    {% for comment in thread.comments.all %}
+      <div class="mb-3 p-3 border rounded">
+        <div class="small text-muted mb-1">
+          <i class="bi bi-person-circle me-1"></i>{{ comment.author.username }}
+          &nbsp;•&nbsp;
+          {{ comment.created_at|date:"F j, Y, g:i a" }}
+        </div>
+        <p class="mb-0">{{ comment.body|linebreaks }}</p>
+      </div>
+    {% empty %}
+      <p class="text-muted">No comments yet. Be the first to reply!</p>
+    {% endfor %}
+  </section>
+
+  <!-- Comment form -->
+  {% if user.is_authenticated %}
+    <section class="mb-5">
+      <h5 class="mb-2">Leave a comment</h5>
+      <form action="{% url 'thread_comment' thread.pk %}" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+          <textarea
+            name="body"
+            rows="4"
+            class="form-control border-danger"
+            placeholder="Write your comment here…"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-danger">Post Comment</button>
+      </form>
+    </section>
+  {% else %}
+    <p>
+      <a href="{% url 'login' %}?next={{ request.path }}" class="btn btn-outline-danger">
+        Log in to comment
+      </a>
+    </p>
+  {% endif %}
+
+  <a href="{% url 'category_feed' thread.category.slug %}" class="link-secondary">
+    ← Back to {{ thread.category.name }}
+  </a>
+{% endblock %}

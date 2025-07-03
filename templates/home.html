@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home – Threadly{% endblock %}
+
+{% block content %}
+  <h1 class="text-center fw-bold mb-4">HOME PAGE</h1>
+
+  <!-- ===== HERO CAROUSEL ===== -->
+  <div
+    id="hero"
+    class="carousel slide border-4 border-danger mx-auto"
+    style="max-width:660px;"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      {% for slide in slides %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+          <img src="{{ slide.image.url }}" class="d-block w-100" alt="{{ slide.title }}">
+          <div class="carousel-caption text-start bg-dark bg-opacity-50 rounded p-2">
+            <span class="badge bg-warning text-dark small mb-1">BREAKING</span>
+            <h5 class="fw-bold">{{ slide.title }}</h5>
+            <p class="small mb-0">
+              {{ slide.timestamp|date:"F j, Y" }} &nbsp;|&nbsp; {{ slide.description }}
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#hero" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#hero" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- ===== CATEGORY GRID ===== -->
+    <h2 class="text-center fw-bold my-5">BROWSE CATEGORY</h2>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    {% for cat in categories %}
+      <div class="col text-center">
+        <a href="{% url 'category_feed' cat.slug %}" class="text-decoration-none">
+          <div class="ratio ratio-16x9 border border-danger rounded overflow-hidden">
+            {# if you stored images in media via ImageField: #}
+            <img src="{{ cat.image.url }}" class="object-fit-cover w-100 h-100" alt="{{ cat.name }}">
+          </div>
+          <p class="mt-2 fs-5 text-dark">
+            <i class="bi {{ cat.icon }} me-1 text-info"></i>{{ cat.name }}
+          </p>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
