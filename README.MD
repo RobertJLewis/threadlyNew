@@ -10,11 +10,6 @@ The focus of this project was to implement the Django framework and Python on th
 
 In line with the project scope, full CRUD (Create, Read, Update, Delete) functionality was implemented across user accounts, blog posts, and comments. Users maintain control over their contributions, with the ability to update or remove their content at any time. An admin panel is included to enable moderation and to allow users to send messages for support or to make feature suggestions.
 
-### Login Details
-Username: admin
-
-Password: threadlyAdmin
-
 ## Table of Contents
 1. [Introduction](#1-introduction)  
 2. [Initial Wireframes](#2-initial-wireframes)  
