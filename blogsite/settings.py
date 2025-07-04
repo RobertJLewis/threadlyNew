@@ -70,8 +70,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
-        },
-    },
+py    },
 ]
 
 TEMPLATES[0]["DIRS"] = [BASE_DIR / "templates"]
