@@ -1,6 +1,8 @@
 # Threadly
 Threadly is a Django-powered social platform designed to bring communities together through sharing posts and conversations. With an emphasis on user interaction and content moderation, it combines familiar forum features with modern usability to create a seamless discussion experience.
+
 ![Threadly Mockup](doc/images/threadlyMockup.webp)  
+
 
 # 1. Introduction:
 ### Project Milestone 3: for Code Institute Full-Stack Development Program: Django Framework
@@ -29,11 +31,17 @@ The Threadly website was designed using a mobile-first approach, prioritising th
 
 ### Mockup screen shots:  
 ![Login Page](doc/images/loginPageMockup.png)  
+
 ![Home Page](doc/images/homePageMockup.png)  
+
 ![Just Chatting](doc/images/justChattingMockup.png)  
+
 ![Gaming and Sport](doc/images/gamingAndSportMockup.png)  
+
 ![Music and Culture](doc/images/muiscAndCultureMockup.png)  
+
 ![Politics and Opinions](doc/images/PoliticsAndOptionsMockup.png)  
+
 
 # 3. Features
 ## Navbar
@@ -53,30 +61,39 @@ The Threadly logo draws visual inspiration from the iconic Marvel logo, reimagin
 
 ## Carousel
 A carousel was implemented as a dynamic banner to highlight breaking news and featured blog posts within each category. This approach ensures that the most important and timely content is immediately visible to users, improving engagement and helping them quickly access updates relevant to their interests. It also allows multiple key stories to be showcased in a compact, visually appealing format without overwhelming the page layout.
+
 ![Carousel of 4x Images](doc/images/CarouselHero.png)  
+
 
 ## Page Titles
 The page titles were designed with simplicity in mind and are center-aligned to create a clean, balanced layout. This straightforward approach helps users easily identify where they are on the site while maintaining a minimalist and cohesive design style.
 
 ## Like & Dislike Button
 The Like & Dislike buttons were added to enable user interaction and feedback on blog posts and articles. This feature allows visitors to express their opinions in a quick, intuitive way, helping to highlight popular content and guide future improvements. It also encourages user engagement and makes the platform feel more dynamic and responsive to reader preferences.
+
 ![Like & Dislike Button](doc/images/likeAndDislikeButton.png)  
+
 
 ## Comment on Blog Posts
 The commenting feature allows users to engage directly with blog content by sharing their thoughts, questions, or feedback. This encourages community interaction and helps create a more dynamic and conversational environment around each post. By enabling comments, the platform fosters user engagement, builds trust, and adds value through diverse perspectives.
+
 ![Commenting on a blog post](doc/images/commentingOnABlogPost.png)  
+
 
 ## Social Media
 Social media is an important way to connect with users and the community around this project. It allows for sharing updates, announcements, and valuable insights while fostering engagement and collaboration. By including social media links, it becomes easier for users to stay informed, provide feedback, and share the project within their networks. This helps create a supportive and active community that contributes to the ongoing growth and success of the project.
 
 ## Footer
 contact phone number, and email address, ensuring users can easily get in touch. It also features a quick navigation link back to the Home page, enhancing overall site usability. The inclusion of a concise copyright notice reinforces the brand’s professionalism and credibility. Designed to be simple and unobtrusive, the footer offers users access to key details without cluttering the interface, contributing to a clean and user-friendly browsing experience.
+
 ![Footer](doc/images/footer.png)  
 
 
 # 4. Website pages:
 ## Login Page
+
 ![Login Page](doc/images/loginPage.png)           
+
 The page is designed to enable users to securely access their accounts by entering their username and password. It boasts a clean, modern layout with a prominent "LOG IN" header, a simple and intuitive form, and clear navigation options such as "REGISTER" or "create new account," guiding both existing and new users. A stylised world map in the background adds visual appeal, subtly reflecting the theme of global connection and reach. The consistent use of a red and white colour scheme enhances brand recognition and ensures readability, while the footer includes useful contact details and legal information. Overall, the design focuses on usability, security, and delivering a smooth user experience.
 
 ## Home Page
@@ -86,9 +103,13 @@ The Threadly homepage includes an interactive carousel showcasing various topics
 Threadly offers users the ability to write and share blogs across multiple categories, creating a dynamic and engaging community platform. Each blog post allows other users to actively participate by liking, disliking, and commenting, fostering rich discussions and feedback. This interactive environment encourages users to express their ideas, share knowledge, and connect with others through meaningful conversations centered around diverse topics. The combination of blogging and real-time engagement helps build a vibrant community where every voice can be heard.
 
 ![Just Chatting](media/slides/justChattingCatagory.png)  
+
 ![Gaming and Sport](media/slides/gamingAndSportCatagory.png)  
+
 ![Music and Culture](media/slides/musicAndCultureCatagory.png)  
-![Politics and Opinions](media/slides/politicsAndOpinionsCatogory.png)       
+
+![Politics and Opinions](media/slides/politicsAndOpinionsCatogory.png)
+
 
 ## Privacy Policy Terms of Service
 Including a Privacy Policy and Terms of Service is important to inform users about how their data is handled and what rules apply when using this project. The Privacy Policy outlines what information may be collected, how it is used, and how it is protected. The Terms of Service define the rights and responsibilities of both the user and the project owner, setting clear expectations for usage, limitations, and liability. Providing these documents ensures transparency, builds trust with users, and helps protect both the developer and the user legally.
@@ -103,21 +124,28 @@ Despite these obstacles, the final outcome reflects a thoughtful balance of desi
 # 6. Testing and Deployment
 
 ![Heroku Case Logs](doc/images/herokuCaseLogs.png)  
+
 ![Heroku Case Logs](doc/images/herokuCaseLogs.png)  
+
 
 ## Light House
 ### Results:
+
 ![Desktop](doc/images/desktopLighthouse.png)  
+
 ![Mobile](doc/images/mobileLighthouse.png)  
+
 Threadly has been tested using Google Lighthouse to ensure a high standard of performance and accessibility. On mobile , the site achieves an excellent score of 99/100 , with fast load times — First Contentful Paint at 0.5s and Largest Contentful Paint at 1.0s . The desktop version scores 72/100 , indicating room for improvement but still maintaining solid performance. Both versions receive strong marks for SEO (91/100) and Best Practices (89–93/100) , ensuring the site is well-structured and optimised for modern web standards
 
 ## CSS testing 
 ### Results:
+
 ![CSS Validator](doc/images/cssValidator.png)
 
 No errors found when running the code through the W3C CSS Validator
 
 ## HTML Testing
+
 ![Home](doc/images/homeHtmlTesting.png)
     The code works well for an MVP, but it has some minor issues like lack of accessibility features, no image fallbacks, and inline styling which may affect scalability and maintainability. However, you may not want to change it now because it's functional, clear, and meets your current needs without overcomplicating things.
 
