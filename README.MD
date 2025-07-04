@@ -2,17 +2,14 @@
 
 ![Threadly Mockup](doc/images/threadlyMockup.webp)  
 
-### Project Milestone 3 for Code Institute Full-Stack Development Program: Django Framework
+### Project Milestone 3: for Code Institute Full-Stack Development Program: Django Framework
 The focus of this project was to implement the Django framework and Python on the back-end to create an intuitive and interactive blog-sharing platform. The website follows a Reddit-style structure, allowing users to register, log in, and manage their accounts with ease. Users can create, edit, and delete blog posts within various content categories, and interact with others by leaving comments and liking posts.
 
 In line with the project scope, full CRUD (Create, Read, Update, Delete) functionality was implemented across user accounts, blog posts, and comments. Users maintain control over their contributions, with the ability to update or remove their content at any time. An admin panel is included to enable moderation and to allow users to send messages for support or to make feature suggestions.
 
-### Passwords
-Username:
-    admin
-
-Password: 
-    threadlyAdmin
+### Login Details
+Username: admin
+Password: threadlyAdmin
 
 ## Table of Contents
 1. [Introduction](#1-introduction)  
@@ -54,21 +51,25 @@ The Threadly logo draws visual inspiration from the iconic Marvel logo, reimagin
 
 ## Carousel
 A carousel was implemented as a dynamic banner to highlight breaking news and featured blog posts within each category. This approach ensures that the most important and timely content is immediately visible to users, improving engagement and helping them quickly access updates relevant to their interests. It also allows multiple key stories to be showcased in a compact, visually appealing format without overwhelming the page layout.
+![Carousel of 4x Images](doc/images/CarouselHero.png)  
 
 ## Page Titles
 The page titles were designed with simplicity in mind and are center-aligned to create a clean, balanced layout. This straightforward approach helps users easily identify where they are on the site while maintaining a minimalist and cohesive design style.
 
 ## Like & Dislike Button
 The Like & Dislike buttons were added to enable user interaction and feedback on blog posts and articles. This feature allows visitors to express their opinions in a quick, intuitive way, helping to highlight popular content and guide future improvements. It also encourages user engagement and makes the platform feel more dynamic and responsive to reader preferences.
+![Like & Dislike Button](doc/images/likeAndDislikeButton.png)  
 
 ## Comment on Blog Posts
 The commenting feature allows users to engage directly with blog content by sharing their thoughts, questions, or feedback. This encourages community interaction and helps create a more dynamic and conversational environment around each post. By enabling comments, the platform fosters user engagement, builds trust, and adds value through diverse perspectives.
+![Commenting on a blog post](doc/images/commentingOnABlogPost.png)  
 
 ## Social Media
 Social media is an important way to connect with users and the community around this project. It allows for sharing updates, announcements, and valuable insights while fostering engagement and collaboration. By including social media links, it becomes easier for users to stay informed, provide feedback, and share the project within their networks. This helps create a supportive and active community that contributes to the ongoing growth and success of the project.
 
 ## Footer
 contact phone number, and email address, ensuring users can easily get in touch. It also features a quick navigation link back to the Home page, enhancing overall site usability. The inclusion of a concise copyright notice reinforces the brand’s professionalism and credibility. Designed to be simple and unobtrusive, the footer offers users access to key details without cluttering the interface, contributing to a clean and user-friendly browsing experience.
+![Footer](doc/images/footer.png)  
 
 
 # 4. Website pages:
