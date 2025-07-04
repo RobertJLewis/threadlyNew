@@ -1,9 +1,8 @@
 # Threadly
 Threadly is a Django-powered social platform designed to bring communities together through sharing posts and conversations. With an emphasis on user interaction and content moderation, it combines familiar forum features with modern usability to create a seamless discussion experience.
-
-# 1. Introduction:
 ![Threadly Mockup](doc/images/threadlyMockup.webp)  
 
+# 1. Introduction:
 ### Project Milestone 3: for Code Institute Full-Stack Development Program: Django Framework
 The focus of this project was to implement the Django framework and Python on the back-end to create an intuitive and interactive blog-sharing platform. The website follows a Reddit-style structure, allowing users to register, log in, and manage their accounts with ease. Users can create, edit, and delete blog posts within various content categories, and interact with others by leaving comments and liking posts.
 
@@ -11,6 +10,7 @@ In line with the project scope, full CRUD (Create, Read, Update, Delete) functio
 
 ### Login Details
 Username: admin
+
 Password: threadlyAdmin
 
 ## Table of Contents
