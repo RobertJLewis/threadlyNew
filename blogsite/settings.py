@@ -11,13 +11,17 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
-import dj_database_url
 import os
+import sys
+import dj_database_url
+from dotenv import load_dotenv
+
+# This line loads environment variables from the .env file.
+load_dotenv()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -26,12 +30,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "False") == "True"
+DEBUG = True
 
-ALLOWED_HOSTS = os.getenv(
-   "ALLOWED_HOSTS",
-    "127.0.0.1,localhost,https://threadly-bd86388a958b.herokuapp.com/"
-).split(",")
+ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1']
+
 
 # Application definition
 
@@ -45,6 +47,10 @@ INSTALLED_APPS = [
     'blog',
     'widget_tweaks',
 ]
+
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -62,7 +68,7 @@ ROOT_URLCONF = 'blogsite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates"],        
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -70,21 +76,30 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
-py    },
+        },
+    },
 ]
-
-TEMPLATES[0]["DIRS"] = [BASE_DIR / "templates"]
 
 WSGI_APPLICATION = 'blogsite.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
+# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    "default": dj_database_url.config(conn_max_age=600, ssl_require=True)
+    # This line now correctly gets the 'DATABASE_URL' environment variable
+    # and passes its value to the parser.
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
+# The 'test' check requires importing the 'sys' module.
+if 'test' in sys.argv:
+    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeinstitute-ide.net/",
+    "https://*.herokuapp.com"
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -121,19 +136,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / "media"
-STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
+
+
 # auth
 LOGIN_URL = "login"        # points to account/login.html
 LOGIN_REDIRECT_URL = "home"
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

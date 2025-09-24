@@ -1,11 +1,15 @@
-asgiref==3.9.0
+altgraph @ file:///AppleInternal/Library/BuildRoots/4~B7IEugDHS-fAL-bTRqAKCb_qmc84naJzmK7469Q/Library/Caches/com.apple.xbs/Sources/python3/altgraph-0.17.2-py2.py3-none-any.whl
+asgiref==3.9.1
 dj-database-url==3.0.1
-Django==5.2.4
+Django==4.2.24
 django-widget-tweaks==1.5.0
-gunicorn==23.0.0
-packaging==25.0
+future @ file:///AppleInternal/Library/BuildRoots/4~B7IEugDHS-fAL-bTRqAKCb_qmc84naJzmK7469Q/Library/Caches/com.apple.xbs/Sources/python3/future-0.18.2-py3-none-any.whl
+macholib @ file:///AppleInternal/Library/BuildRoots/4~B7IEugDHS-fAL-bTRqAKCb_qmc84naJzmK7469Q/Library/Caches/com.apple.xbs/Sources/python3/macholib-1.15.2-py2.py3-none-any.whl
 pillow==11.3.0
-psycopg2-binary==2.9.10
+psycopg2-binary==2.9.9
+python-dotenv==1.1.1
+pytz==2025.2
+six @ file:///AppleInternal/Library/BuildRoots/4~B7IEugDHS-fAL-bTRqAKCb_qmc84naJzmK7469Q/Library/Caches/com.apple.xbs/Sources/python3/six-1.15.0-py2.py3-none-any.whl
 sqlparse==0.5.3
-tzdata==2025.2
-whitenoise==6.9.0
+typing_extensions==4.15.0
+whitenoise==6.11.0
