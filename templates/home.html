@@ -4,7 +4,7 @@
 {% block title %}Home – Threadly{% endblock %}
 
 {% block content %}
-  <h1 class="text-center fw-bold mb-4">HOME PAGE</h1>
+  <h1 class="text-center">HOME PAGE</h1>
 
   <!-- ===== HERO CAROUSEL ===== -->
   <div
@@ -18,7 +18,7 @@
         <div class="carousel-item {% if forloop.first %}active{% endif %}">
           <img src="{{ slide.image.url }}" class="d-block w-100" alt="{{ slide.title }}">
           <div class="carousel-caption text-start bg-dark bg-opacity-50 rounded p-2">
-            <span class="badge bg-warning text-dark small mb-1">BREAKING</span>
+            <span class="badge bg-warning text-dark small mb-1">Have You Heared</span>
             <h5 class="fw-bold">{{ slide.title }}</h5>
             <p class="small mb-0">
               {{ slide.timestamp|date:"F j, Y" }} &nbsp;|&nbsp; {{ slide.description }}
