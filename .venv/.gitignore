@@ -2,3 +2,5 @@
 .gitpod.dockerfile
 .gitpod.yml
 README.md
+.env
+env.py
