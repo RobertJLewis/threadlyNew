@@ -16,31 +16,45 @@
   {% block extra_head %}{% endblock %}
 </head>
 <body class="d-flex flex-column min-vh-100">
+
+
 <!-- ===== TOP NAV ===== -->
-<nav class="navbar navbar-expand bg-white py-3 shadow-sm">
-    <div class="container">
-      <!-- Logo -->
-      <a class="navbar-brand p-0" href="{% url 'home' %}">
-        <img src="{% static 'img/logo.jpeg' %}" alt="Threadly" style="height:2.5rem;">
-      </a>
-      <!-- Login / Logout -->
-      <ul class="navbar-nav ms-auto">
-        {% if user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link fw-semibold" href="{% url 'logout' %}?next={{ request.path }}">
-              Log out
-            </a>
-          </li>
-        {% else %}
-          <li class="nav-item">
-            <a class="nav-link fw-semibold" href="{% url 'login' %}?next={{ request.path }}">
-              Log in
-            </a>
-          </li>
-        {% endif %}
-      </ul>
-    </div>
+<nav class="navbar navbar-expand navbar-light py-3 shadow-sm" style="background-color: #ed1c24;">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand p-0" href="{% url 'home' %}">
+      <img src="{% static 'img/logo.jpeg' %}" alt="Threadly" style="height:2.5rem;">
+    </a>
+
+    <!-- Nav items always visible -->
+    <ul class="navbar-nav ms-auto">
+
+      <!-- Categories Dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle fw-semibold text-white" href="#" id="categoryDropdown" role="button"
+           data-bs-toggle="dropdown" aria-expanded="false">
+          Categories
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end bg-white" aria-labelledby="categoryDropdown">
+          <li><a class="dropdown-item" href="{% url 'category_feed' 'just-chatting' %}">Just Chatting</a></li>
+          <li><a class="dropdown-item" href="{% url 'category_feed' 'sports-gaming' %}">Sports & Gaming</a></li>
+          <li><a class="dropdown-item" href="{% url 'category_feed' 'music' %}">Music</a></li>
+          <li><a class="dropdown-item" href="{% url 'category_feed' 'politics' %}">Politics</a></li>
+          <li><hr class="dropdown-divider"></li>
+          {% if user.is_authenticated %}
+            <li><a class="dropdown-item" href="{% url 'logout' %}?next={{ request.path }}">Log out</a></li>
+          {% else %}
+            <li><a class="dropdown-item" href="{% url 'login' %}?next={{ request.path }}">Log in</a></li>
+          {% endif %}
+        </ul>
+      </li>
+
+    </ul>
+  </div>
 </nav>
+
+
+
 
 <main class="container flex-grow-1 py-4">
   {% block content %}{% endblock %}
@@ -64,8 +78,8 @@
       <div class="col-12 col-md-6 col-lg-4 text-md-end">
         <h5 class="fw-bold">Follow Us</h5>
         <a href="https://www.facebook.com/" class="footer-social me-3"><i class="bi bi-facebook"></i></a>
-        <a href="https://www.twitter.com" class="footer-social me-3"><i class="bi bi-twitter"></i></a>
-        <a href="https://www.instagram.com/" class="footer-social"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.twitter.com/" class="footer-social me-3"><i class="bi bi-twitter"></i></a>
+        <a href="/" class="footer-social"><i class="bi bi-instagram"></i></a>
       </div>
     </div>
 

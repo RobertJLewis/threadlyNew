@@ -1,6 +1,6 @@
 /* brand red = #d71f29 (adjust if needed) */
 :root {
-  --threadly-red: #d71f29;
+  --threadly-red: #ed1c24;
 }
 
 .border-danger     { border-color: var(--threadly-red)!important; }
